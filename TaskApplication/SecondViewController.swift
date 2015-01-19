@@ -25,10 +25,19 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     //Button Clicked
     @IBAction func btnAddTask(sender : UIButton){
+        if (txtTask.text == "" || txtDesc.text == ""){
+            //do nothing as nothing was entered
+        } else {
+        //add record
         taskMgr.addTask(txtTask.text, desc: txtDesc.text)
+            
+        //dismiss keyboard and reset fields
+            
         self.view.endEditing(true)
         txtTask.text = nil
         txtDesc.text = nil
+            
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
