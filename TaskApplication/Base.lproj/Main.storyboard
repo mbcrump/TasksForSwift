@@ -33,7 +33,7 @@
                             <constraint firstItem="NCD-9e-ZZw" firstAttribute="top" secondItem="DSN-lR-OQr" secondAttribute="bottom" id="qFs-C7-tpM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="report_card-50" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tblTasks" destination="NCD-9e-ZZw" id="DNX-Yc-Hw5"/>
                     </connections>
@@ -114,7 +114,7 @@
                             <constraint firstItem="OU2-YP-iqb" firstAttribute="top" secondItem="GaV-Z4-jWT" secondAttribute="bottom" constant="8" symbolic="YES" id="s5w-Py-x6z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Tasks" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Add Tasks" image="create_new-50" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="txtDesc" destination="OU2-YP-iqb" id="l7y-fK-Kbf"/>
                         <outlet property="txtTask" destination="GaV-Z4-jWT" id="TWN-L3-ok5"/>
@@ -145,7 +145,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="create_new-50" width="25" height="25"/>
+        <image name="report_card-50" width="25" height="25"/>
     </resources>
 </document>
