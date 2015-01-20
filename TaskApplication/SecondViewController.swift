@@ -25,8 +25,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     //Button Clicked
     @IBAction func btnAddTask(sender : UIButton){
-        if (txtTask.text == "" || txtDesc.text == ""){
-            //do nothing as nothing was entered
+        if (txtTask.text == ""){
+            //Task Title is blank, do not add a record
         } else {
         //add record
         taskMgr.addTask(txtTask.text, desc: txtDesc.text)
