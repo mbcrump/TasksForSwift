@@ -14,6 +14,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet var tblTasks : UITableView!
     
+    //For persisting data
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tblTasks.reloadData()
@@ -31,8 +34,23 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default Tasks")
         
-        cell.textLabel?.text = taskMgr.tasks[indexPath.row].name
-        cell.detailTextLabel?.text = taskMgr.tasks[indexPath.row].desc
+        //cell.textLabel?.text = taskMgr.tasks[indexPath.row].name
+        //cell.detailTextLabel?.text = taskMgr.tasks[indexPath.row].desc
+        
+        //Persist Data
+        
+        if let name = defaults.stringForKey("taskNameKey")
+        {
+            cell.textLabel?.text = name
+            println(name)
+        }
+        
+        if let desc = defaults.stringForKey("descNameKey")
+        {
+            cell.detailTextLabel?.text = desc
+            println(desc)
+        }
+
         
         return cell
     }
@@ -42,6 +60,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (editingStyle == UITableViewCellEditingStyle.Delete){
         
             taskMgr.tasks.removeAtIndex(indexPath.row)
+            
+            //Persist Data
+            defaults.removeObjectForKey(taskMgr.tasks[indexPath.row].name)
+            defaults.removeObjectForKey(taskMgr.tasks[indexPath.row].desc)
             tblTasks.reloadData()
         }
         
