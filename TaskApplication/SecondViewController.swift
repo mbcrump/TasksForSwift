@@ -28,14 +28,16 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         if (txtTask.text == ""){
             //Task Title is blank, do not add a record
         } else {
-        //add record
-        taskMgr.addTask(txtTask.text, desc: txtDesc.text)
+            //add record
+            var name: String = txtTask.text
+            var description: String = txtDesc.text
+            taskMgr.addTask(name, desc: description)
             
-        //dismiss keyboard and reset fields
+            //dismiss keyboard and reset fields
             
-        self.view.endEditing(true)
-        txtTask.text = nil
-        txtDesc.text = nil
+            self.view.endEditing(true)
+            txtTask.text = nil
+            txtDesc.text = nil
             
         }
     }
@@ -43,9 +45,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
-    
-
-    
+        
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true

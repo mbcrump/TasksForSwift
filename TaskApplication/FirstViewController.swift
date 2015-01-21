@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 {
+    
 
     @IBOutlet var tblTasks : UITableView!
     
@@ -34,25 +35,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default Tasks")
         
-        //cell.textLabel?.text = taskMgr.tasks[indexPath.row].name
-        //cell.detailTextLabel?.text = taskMgr.tasks[indexPath.row].desc
-        
-        //Persist Data
-        
-        if let name = defaults.stringForKey("taskNameKey")
-        {
-            cell.textLabel?.text = name
-            println(name)
-        }
-        
-        if let desc = defaults.stringForKey("descNameKey")
-        {
-            cell.detailTextLabel?.text = desc
-            println(desc)
-        }
-
+        //Assign the contents of our var "items" to the textLabel of each cell
+        cell.textLabel!.text = taskMgr.tasks[indexPath.row].name
+        cell.detailTextLabel!.text = taskMgr.tasks[indexPath.row].desc
         
         return cell
+        
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
@@ -60,10 +48,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (editingStyle == UITableViewCellEditingStyle.Delete){
         
             taskMgr.tasks.removeAtIndex(indexPath.row)
-            
-            //Persist Data
-            defaults.removeObjectForKey(taskMgr.tasks[indexPath.row].name)
-            defaults.removeObjectForKey(taskMgr.tasks[indexPath.row].desc)
             tblTasks.reloadData()
         }
         

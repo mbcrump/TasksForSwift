@@ -21,12 +21,12 @@ class TaskManager: NSObject {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
-
+    
     func addTask(name: String, desc: String){
         tasks.append(task(name: name, desc: desc))
         defaults.setObject(name, forKey: "taskNameKey")
         defaults.setObject(desc, forKey: "descNameKey")
         
     }
-   
+    
 }
