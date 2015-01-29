@@ -7,7 +7,7 @@ The original blog post for this article can be found [here](http://developer.tel
 
 Below is a demo of what the end result is: 
 
-
+![image](https://github.com/mbcrump/TasksForSwift/blob/master/demo.gif)
 
 ####Here is my contact info
 
