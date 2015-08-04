@@ -2,7 +2,6 @@
 //  FirstViewController.swift
 //  TaskApplication
 //
-//  Created by Michael Crump on 1/19/15.
 //  Copyright (c) 2015 Michael Crump. All rights reserved.
 //
 
@@ -15,12 +14,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet var tblTasks : UITableView!
     
-    //For persisting data
-    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tblTasks.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tblTasks.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +51,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             taskMgr.tasks.removeAtIndex(indexPath.row)
             tblTasks.reloadData()
         }
-        
-        
     }
         
 }

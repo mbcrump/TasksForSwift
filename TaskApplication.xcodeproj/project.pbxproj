@@ -87,8 +87,8 @@
 				86FF5BB81A6D65FB00A017A1 /* Main.storyboard */,
 				86FF5BBB1A6D65FB00A017A1 /* Images.xcassets */,
 				86FF5BBD1A6D65FB00A017A1 /* LaunchScreen.xib */,
-				86FF5BB01A6D65FB00A017A1 /* Supporting Files */,
 				86FF5BD41A6D697400A017A1 /* TaskManager.swift */,
+				86FF5BB01A6D65FB00A017A1 /* Supporting Files */,
 			);
 			path = TaskApplication;
 			sourceTree = "<group>";
