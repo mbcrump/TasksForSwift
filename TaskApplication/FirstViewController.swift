@@ -10,8 +10,6 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 {
-    
-
     @IBOutlet var tblTasks : UITableView!
     
     
@@ -34,6 +32,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default Tasks")
         
         //Assign the contents of our var "items" to the textLabel of each cell

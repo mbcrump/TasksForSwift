@@ -28,8 +28,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             //Task Title is blank, do not add a record
         } else {
             //add record
-            var name: String = txtTask.text
-            var description: String = txtDesc.text
+            let name: String = txtTask.text!
+            let description: String = txtDesc.text!
             taskMgr.addTask(name, desc: description)
             
             //dismiss keyboard and reset fields
@@ -41,7 +41,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
         
